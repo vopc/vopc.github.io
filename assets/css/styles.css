@@ -43,8 +43,8 @@ body {
 }
 
 .logo-image {
-    height: 50px;
     width: auto;
+    height: 50px;
     flex-shrink: 0;
 }
 
@@ -115,9 +115,11 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /*background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);*/
+    background: #352026ba;
     color: white;
     overflow: hidden;
+    /*opacity: 0.8;*/
 }
 
 .hero-content {
@@ -150,8 +152,8 @@ body {
 }
 
 .hero-logo-image {
-    height: 120px;
     width: auto;
+    height: 120px;
 }
 
 .btn {
@@ -188,11 +190,20 @@ body {
 .hero-image {
     position: absolute;
     top: 0;
+    left: 0;
     right: 0;
-    width: 50%;
-    height: 100%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600"><rect fill="%23ffffff" opacity="0.1" width="400" height="600"/></svg>');
-    background-size: cover;
+    bottom: 0;
+    /*background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600"><rect fill="%23ffffff" opacity="0.1" width="400" height="600"/></svg>');*/
+    background-size: auto 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 56.25vw; /* 9/16 * 100 = 56.25 */
+  max-height: 100vh; /* Don't exceed viewport height */
+  min-height: 400px; /* Minimum height for mobile */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
 }
 
 .hero-overlay {
@@ -587,16 +598,6 @@ section {
     
     .hero-title {
         font-size: 2.5rem;
-    }
-    
-    .hero-logo-image {
-        height: 80px;
-        width: auto;
-    }
-    
-    .logo-image {
-        height: 40px;
-        width: auto;
     }
     
     .hero-buttons {

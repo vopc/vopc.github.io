@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Home
+hero:
+  image: /assets/images/full_choir.jpeg
 ---
 
 <!-- Hero Section -->
@@ -16,6 +18,7 @@ title: Home
         </div>
     </div>
     <div class="hero-image">
+        <img src="{{ '/assets/images/full_choir.jpeg' | relative_url }}" alt="VOPC choir">
         <div class="hero-overlay"></div>
     </div>
 </section>
@@ -125,6 +128,30 @@ title: Home
         <div class="events-grid">
             <div class="event-card">
                 <div class="event-date">
+                    <span class="month">十一月</span>
+                    <span class="day">1</span>
+                </div>
+                <div class="event-content">
+                    <h3>2025秋季音樂會</h3>
+                    <p class="event-time">2025年11月1日 • 晚上7:30</p>
+                    <p class="event-description">年度秋季音樂會，演出古典和中國曲目。門票即將發售。</p>
+                    <a href="#" class="event-link">了解更多</a>
+                </div>
+            </div>
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="month">9月</span>
+                    <span class="day">19</span>
+                </div>
+                <div class="event-content">
+                    <h3>加中合唱節</h3>
+                    <p class="event-time">2025年9月19日 • 晚上7:00</p>
+                    <p class="event-description">加中合唱節暨慶祝加中建交55週年。來自世界的聲音，匯聚藝術的力量，中外著名藝術家合唱團，榮耀獻唱，傾情上演。</p>
+                    <a href="#" class="event-link">了解更多</a>
+                </div>
+            </div>
+            <div class="event-card">
+                <div class="event-date">
                     <span class="month">每週</span>
                     <span class="day">日</span>
                 </div>
@@ -133,30 +160,6 @@ title: Home
                     <p class="event-time">每週日 • 晚上7:00</p>
                     <p class="event-description">歡迎參加我們的定期練唱。新團員需通過試音後加入。</p>
                     <a href="#contact" class="event-link">聯絡我們</a>
-                </div>
-            </div>
-            <div class="event-card">
-                <div class="event-date">
-                    <span class="month">五月</span>
-                    <span class="day">25</span>
-                </div>
-                <div class="event-content">
-                    <h3>春季音樂會</h3>
-                    <p class="event-time">2024年5月25日 • 晚上7:30</p>
-                    <p class="event-description">年度春季音樂會，演出古典和中國曲目。門票即將發售。</p>
-                    <a href="#" class="event-link">了解更多</a>
-                </div>
-            </div>
-            <div class="event-card">
-                <div class="event-date">
-                    <span class="month">十二月</span>
-                    <span class="day">15</span>
-                </div>
-                <div class="event-content">
-                    <h3>節日慈善音樂會</h3>
-                    <p class="event-time">2024年12月15日 • 晚上7:00</p>
-                    <p class="event-description">特別節日演出，支持當地慈善機構和社區活動。</p>
-                    <a href="#" class="event-link">了解更多</a>
                 </div>
             </div>
         </div>
