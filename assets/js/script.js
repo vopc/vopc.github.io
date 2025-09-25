@@ -175,7 +175,7 @@ backToTopButton.style.cssText = `
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: #2563eb;
+    background: #a82212;
     color: white;
     border: none;
     font-size: 20px;

@@ -51,7 +51,7 @@ body {
 .logo-text h1 {
     font-size: 2rem;
     font-weight: 700;
-    color: #2563eb;
+    color: #a82212;
     margin-bottom: 0.25rem;
 }
 
@@ -82,7 +82,7 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-    color: #2563eb;
+    color: #a82212;
 }
 
 .nav-link.active::after {
@@ -92,7 +92,7 @@ body {
     left: 0;
     right: 0;
     height: 2px;
-    background: #2563eb;
+    background: #a82212;
 }
 
 .mobile-menu-toggle {
@@ -168,7 +168,7 @@ body {
 
 .btn-primary {
     background: #fff;
-    color: #2563eb;
+    color: #a82212;
 }
 
 .btn-primary:hover {
@@ -184,7 +184,7 @@ body {
 
 .btn-secondary:hover {
     background: #fff;
-    color: #2563eb;
+    color: #a82212;
 }
 
 .hero-image {
@@ -283,7 +283,7 @@ section {
 .stat h4 {
     font-size: 2rem;
     font-weight: 700;
-    color: #2563eb;
+    color: #a82212;
     margin-bottom: 0.5rem;
 }
 
@@ -368,7 +368,7 @@ section {
 }
 
 .event-date {
-    background: #2563eb;
+    background: #a82212;
     color: #fff;
     padding: 1rem;
     border-radius: 8px;
@@ -397,7 +397,7 @@ section {
 }
 
 .event-time {
-    color: #2563eb;
+    color: #a82212;
     font-weight: 500;
     margin-bottom: 0.5rem;
 }
@@ -408,7 +408,7 @@ section {
 }
 
 .event-link {
-    color: #2563eb;
+    color: #a82212;
     text-decoration: none;
     font-weight: 500;
 }
