@@ -195,11 +195,12 @@ body {
     bottom: 0;
     /*background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600"><rect fill="%23ffffff" opacity="0.1" width="400" height="600"/></svg>');*/
     background-size: auto 100%;
-    background-position: center center;
+    background-position: center top;
     background-repeat: no-repeat;
+    transform: translateY(20%);
     height: 56.25vw; /* 9/16 * 100 = 56.25 */
   max-height: 100vh; /* Don't exceed viewport height */
-  min-height: 400px; /* Minimum height for mobile */
+  min-height: 600px; /* Minimum height for mobile */
   display: flex;
   align-items: center;
   justify-content: center;
