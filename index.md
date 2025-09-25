@@ -8,7 +8,7 @@ title: Home
     <div class="hero-content">
         <div class="container">
             <div class="hero-logo">
-                <img src="{{ '/assets/images/vopc-logo.svg' | relative_url }}" alt="VOPC Logo" class="hero-logo-image">
+                <img src="{{ '/assets/images/vopc-logo.png' | relative_url }}" alt="VOPC Logo" class="hero-logo-image">
             </div>
             <h2 class="hero-title">溫哥華愛樂合唱團</h2>
             <p class="hero-subtitle">歡迎訪問溫哥華愛樂合唱團</p>
