@@ -43,8 +43,8 @@ body {
 }
 
 .logo-image {
-    width: 50px;
     height: 50px;
+    width: auto;
     flex-shrink: 0;
 }
 
@@ -150,8 +150,8 @@ body {
 }
 
 .hero-logo-image {
-    width: 120px;
     height: 120px;
+    width: auto;
 }
 
 .btn {
@@ -587,6 +587,16 @@ section {
     
     .hero-title {
         font-size: 2.5rem;
+    }
+    
+    .hero-logo-image {
+        height: 80px;
+        width: auto;
+    }
+    
+    .logo-image {
+        height: 40px;
+        width: auto;
     }
     
     .hero-buttons {
