@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title }} - {% endif %}VOPC - Vancouver Organization of People with Cerebral Palsy</title>
+    <title>{% if page.title %}{{ page.title }} - {% endif %}VOPC - 溫哥華愛樂合唱團</title>
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     {% seo %}
@@ -14,17 +14,20 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <h1>VOPC</h1>
-                    <span class="tagline">Vancouver Organization of People with Cerebral Palsy</span>
+                    <img src="{{ '/assets/images/vopc-logo.svg' | relative_url }}" alt="VOPC Logo" class="logo-image">
+                    <div class="logo-text">
+                        <h1>VOPC</h1>
+                        <span class="tagline">溫哥華愛樂合唱團</span>
+                    </div>
                 </div>
                 <nav class="navigation">
                     <ul class="nav-menu">
-                        <li><a href="#home" class="nav-link active">Home</a></li>
-                        <li><a href="#about" class="nav-link">About</a></li>
-                        <li><a href="#services" class="nav-link">Services</a></li>
-                        <li><a href="#events" class="nav-link">Events</a></li>
-                        <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                        <li><a href="#home" class="nav-link active">首頁</a></li>
+                        <li><a href="#about" class="nav-link">關於愛樂</a></li>
+                        <li><a href="#services" class="nav-link">我們的活動</a></li>
+                        <li><a href="#events" class="nav-link">演出</a></li>
+                        <li><a href="#gallery" class="nav-link">相簿</a></li>
+                        <li><a href="#contact" class="nav-link">聯絡我們</a></li>
                     </ul>
                     <div class="mobile-menu-toggle">
                         <span></span>
@@ -47,7 +50,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>VOPC</h3>
-                    <p>Vancouver Organization of People with Cerebral Palsy</p>
+                    <p>溫哥華愛樂合唱團</p>
                     <div class="social-links">
                         <a href="#" class="social-link">Facebook</a>
                         <a href="#" class="social-link">Twitter</a>
@@ -55,34 +58,34 @@
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>快速連結</h4>
                     <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#events">Events</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#about">關於愛樂</a></li>
+                        <li><a href="#services">我們的活動</a></li>
+                        <li><a href="#events">演出</a></li>
+                        <li><a href="#contact">聯絡我們</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Resources</h4>
+                    <h4>合唱團資訊</h4>
                     <ul>
-                        <li><a href="#">Support Groups</a></li>
-                        <li><a href="#">Educational Materials</a></li>
-                        <li><a href="#">Healthcare Resources</a></li>
-                        <li><a href="#">Accessibility Guide</a></li>
+                        <li><a href="#">練唱時間</a></li>
+                        <li><a href="#">試音資訊</a></li>
+                        <li><a href="#">演出曲目</a></li>
+                        <li><a href="#">團員招募</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe to our newsletter for updates and events.</p>
+                    <h4>電子報</h4>
+                    <p>訂閱我們的電子報以獲取最新消息和活動資訊。</p>
                     <div class="newsletter-form">
-                        <input type="email" placeholder="Your email">
-                        <button type="submit">Subscribe</button>
+                        <input type="email" placeholder="您的電子郵件">
+                        <button type="submit">訂閱</button>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; {{ 'now' | date: "%Y" }} VOPC - Vancouver Organization of People with Cerebral Palsy. All rights reserved.</p>
+                <p>&copy; {{ 'now' | date: "%Y" }} VOPC - 溫哥華愛樂合唱團. All rights reserved.</p>
             </div>
         </div>
     </footer>
