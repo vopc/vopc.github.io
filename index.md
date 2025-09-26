@@ -213,7 +213,7 @@ hero:
     <div class="container">
         <div class="section-header">
             <h2>加入我們</h2>
-            <p>聯絡我們進行試音或了解更多資訊</p>
+            <p>微信掃一掃進行試音或了解更多資訊</p>
         </div>
         <div class="contact-content">
             <div class="contact-info">
@@ -235,21 +235,7 @@ hero:
                 </div>
             </div>
             <div class="contact-form">
-                <form>
-                    <div class="form-group">
-                        <input type="text" placeholder="您的姓名" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="您的電子郵件" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="主題（例如：試音查詢）" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="請告訴我們您的音樂背景和加入的興趣" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">發送訊息</button>
-                </form>
+                <img src="{{ '/assets/images/vopc-wechat-app-qrcode.png' | relative_url }}" class="image-placeholder" />
             </div>
         </div>
     </div>
