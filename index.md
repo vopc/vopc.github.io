@@ -157,7 +157,7 @@ hero:
                 </div>
                 <div class="event-content">
                     <h3>定期練唱</h3>
-                    <p class="event-time">每週日 • 晚上7:00</p>
+                    <p class="event-time">每週日 • 晚上7:30</p>
                     <p class="event-description">歡迎參加我們的定期練唱。新團員需通過試音後加入。</p>
                     <a href="#contact" class="event-link">聯絡我們</a>
                 </div>
@@ -231,7 +231,7 @@ hero:
                 </div>
                 <div class="contact-item">
                     <h3>練唱時間</h3>
-                    <p>每週日：晚上7:00<br>聲樂訓練：晚上6:00</p>
+                    <p>每週日：晚上7:30<br>聲樂訓練：晚上6:30</p>
                 </div>
             </div>
             <div class="contact-form">
