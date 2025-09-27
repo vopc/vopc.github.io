@@ -143,7 +143,7 @@ hero:
                     <h3>2025秋季音樂會</h3>
                     <p class="event-time">2025年11月1日 • 晚上7:30</p>
                     <p class="event-description">年度秋季音樂會，演出古典和中國曲目。門票即將發售。</p>
-                    <a href="#" class="event-link">了解更多</a>
+                    <a href="javascript:void(0);" class="event-link" data-poster="{{ '/assets/images/posters/20251101-poster.JPG' | relative_url }}">了解更多</a>
                 </div>
             </div>
             <div class="event-card">
@@ -155,7 +155,7 @@ hero:
                     <h3>加中合唱節</h3>
                     <p class="event-time">2025年9月19日 • 晚上7:00</p>
                     <p class="event-description">加中合唱節暨慶祝加中建交55週年。來自世界的聲音，匯聚藝術的力量，中外著名藝術家合唱團，榮耀獻唱，傾情上演。</p>
-                    <a href="#" class="event-link">了解更多</a>
+                    <a href="javascript:void(0);" class="event-link" data-poster="{{ '/assets/images/posters/20250919-poster.jpg' | relative_url }}">了解更多</a>
                 </div>
             </div>
             <div class="event-card">
@@ -167,7 +167,7 @@ hero:
                     <h3>定期練唱</h3>
                     <p class="event-time">每週日 • 晚上7:30</p>
                     <p class="event-description">歡迎參加我們的定期練唱。新團員需通過試音後加入。</p>
-                    <a href="#contact" class="event-link">聯絡我們</a>
+                    <a href="#contact" class="contact-link">聯絡我們</a>
                 </div>
             </div>
         </div>

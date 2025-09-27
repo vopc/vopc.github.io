@@ -231,3 +231,31 @@ document.addEventListener('DOMContentLoaded', function () {
     rewind: false
   }).mount();
 });
+
+// Event Poster Modal
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('eventPosterModal');
+    const modalImage = document.getElementById('eventPosterModalImage');
+    const closeButton = document.querySelector('.event-poster-close-button');
+
+    document.querySelectorAll('.event-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const posterSrc = this.getAttribute('data-poster');
+            if (posterSrc) {
+                modal.style.display = 'flex'; // Use flex to show and center
+                modalImage.src = posterSrc;
+            }
+        });
+    });
+
+    closeButton.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});

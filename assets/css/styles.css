@@ -484,6 +484,16 @@ section {
     justify-content: center;
 }
 
+.contact-link {
+    color: #a82212;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -632,7 +642,7 @@ section {
     }
     
     .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 }
 
@@ -688,4 +698,47 @@ section {
     object-fit: contain;
 }
 
+.glide__bullets {
+    bottom: 20px;
+}
 
+/* Image Modal */
+.event-poster-modal {
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    display: flex; /* Use flexbox for centering */
+    align-items: flex-start; /* Align to the top */
+    justify-content: center; /* Center horizontally */
+    display: none; /* Hidden by default */
+}
+
+.event-poster-modal-content {
+    width: 80%;
+    max-width: 700px;
+    max-height: 90%;
+    object-fit: contain;
+    margin-top: 50px; /* Adjust this value to lower the content */
+}
+
+.event-poster-close-button {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.event-poster-close-button:hover,
+.event-poster-close-button:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title }} - {% endif %}VOPC - 溫哥華愛樂合唱團</title>
+    <title>VOPC - 溫哥華愛樂合唱團</title>
     <link rel="icon" href="{{ '/assets/images/vopcfavicon.jpg' | relative_url }}" type="image/jpg">
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -96,5 +96,10 @@
 
     <script src="{{ '/assets/vendor/glide.min.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
+
+    <div id="eventPosterModal" class="event-poster-modal">
+        <span class="event-poster-close-button">&times;</span>
+        <img class="event-poster-modal-content" id="eventPosterModalImage">
+    </div>
 </body>
 </html>
