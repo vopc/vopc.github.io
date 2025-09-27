@@ -55,9 +55,13 @@ hero:
                     </div>
                 </div>
             </div>
-            <div class="about-image">
-                <div class="image-placeholder">
-                    <span>合唱團演出照片</span>
+            <div class="glide">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        <li class="glide__slide"><img src="{{ '/assets/images/concerts/20241109/SM76619.jpg' | relative_url }}" alt="Full Choir"></li>
+                        <li class="glide__slide"><img src="{{ '/assets/images/concerts/20241109/SM76627.jpg' | relative_url }}" alt="VOPC Logo"></li>
+                        <li class="glide__slide"><img src="{{ '/assets/images/concerts/20241109/SM76741.jpg' | relative_url }}" alt="VOPC WeChat QR Code"></li>
+                    </ul>
                 </div>
             </div>
         </div>

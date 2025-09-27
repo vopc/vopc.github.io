@@ -223,3 +223,10 @@ loadingStyle.textContent = `
     }
 `;
 document.head.appendChild(loadingStyle);
+
+// Glide.js Slider
+document.addEventListener('DOMContentLoaded', function () {
+  new Glide('.glide', {
+    perView: 1
+  }).mount();
+});
