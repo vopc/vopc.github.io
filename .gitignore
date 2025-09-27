@@ -1,0 +1,6 @@
+.DS_Store
+.bundle/
+_site/
+assets/.DS_Store
+assets/images/.DS_Store
+vendor/
