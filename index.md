@@ -143,7 +143,7 @@ hero:
                     <h3>2025秋季音樂會</h3>
                     <p class="event-time">2025年11月1日 • 晚上7:30</p>
                     <p class="event-description">年度秋季音樂會，演出古典和中國曲目。門票即將發售。</p>
-                    <a href="javascript:void(0);" class="event-link" data-poster="{{ '/assets/images/posters/20251101-poster.JPG' | relative_url }}">了解更多</a>
+                    <a href="javascript:void(0);" class="event-link" data-poster="{{ '/assets/images/posters/20251101-poster.jpg' | relative_url }}">了解更多</a>
                 </div>
             </div>
             <div class="event-card">
