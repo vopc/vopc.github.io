@@ -63,6 +63,10 @@ hero:
                         <li class="glide__slide"><img src="{{ '/assets/images/concerts/20241109/SM76741.jpg' | relative_url }}" alt="VOPC WeChat QR Code"></li>
                     </ul>
                 </div>
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-chevron-left"></i></button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">"> <i class="fas fa-chevron-right"></i></button>
+                </div>
             </div>
         </div>
     </div>
