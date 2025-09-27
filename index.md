@@ -224,6 +224,9 @@ hero:
             <p>微信掃一掃進行試音或了解更多資訊</p>
         </div>
         <div class="contact-content">
+            <div class="contact-image">
+                <img src="{{ '/assets/images/vopc-wechat-app-qrcode.png' | relative_url }}" />
+            </div>
             <div class="contact-info">
                 <div class="contact-item">
                     <h3>指揮</h3>
@@ -241,9 +244,6 @@ hero:
                     <h3>練唱時間</h3>
                     <p>每週日：晚上7:30<br>聲樂訓練：晚上6:30</p>
                 </div>
-            </div>
-            <div class="contact-form">
-                <img src="{{ '/assets/images/vopc-wechat-app-qrcode.png' | relative_url }}" class="image-placeholder" />
             </div>
         </div>
     </div>
