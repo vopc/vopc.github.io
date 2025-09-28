@@ -219,7 +219,7 @@ hero:
                 </div>
                 <div class="contact-item">
                     <h3>電子郵件</h3>
-                    <p>info@vopc.ca</p>
+                    <p>vopcca@gmail.com</p>
                 </div>
                 <div class="contact-item">
                     <h3>練唱時間</h3>
