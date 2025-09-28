@@ -95,5 +95,5 @@ This project is licensed under the MIT License - see the `LICENSE` file for deta
 ## 📧 Contact
 
 Vancouver Oratorio Philharmonic Choir
-- **Email**: info@vopc.ca
+- **Email**: vopcca@gmail.com
 - **Website**: vopc.ca
