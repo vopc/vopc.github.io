@@ -4,8 +4,6 @@ This is the official website for the 溫哥華愛樂合唱團 (Vancouver Oratori
 
 **Live Site:** [https://vopc.ca](https://vopc.ca)
 
-![VOPC Website Screenshot](https://vopc.ca/assets/images/full_choir.jpeg)
-
 ## ✨ Features
 
 - **Responsive Design**: Fully responsive layout for optimal viewing on desktops, tablets, and mobile devices.
