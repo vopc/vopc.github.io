@@ -111,7 +111,7 @@ const observer = new IntersectionObserver(function(entries) {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', function() {
-    const animateElements = document.querySelectorAll('.service-card, .event-card, .gallery-item, .stat');
+    const animateElements = document.querySelectorAll('.service-card, .event-card, .stat');
     animateElements.forEach(el => {
         observer.observe(el);
     });
@@ -122,7 +122,6 @@ const style = document.createElement('style');
 style.textContent = `
     .service-card,
     .event-card,
-    .gallery-item,
     .stat {
         opacity: 0;
         transform: translateY(30px);
@@ -131,7 +130,6 @@ style.textContent = `
     
     .service-card.animate-in,
     .event-card.animate-in,
-    .gallery-item.animate-in,
     .stat.animate-in {
         opacity: 1;
         transform: translateY(0);
@@ -226,10 +224,13 @@ document.head.appendChild(loadingStyle);
 
 // Glide.js Slider
 document.addEventListener('DOMContentLoaded', function () {
-  new Glide('.glide', {
-    perView: 1,
-    rewind: false
-  }).mount();
+  if (document.querySelector('.glide')) {
+    new Glide('.glide', {
+      perView: 1,
+      rewind: false
+    }).mount();
+  }
+
 });
 
 // Event Poster Modal
@@ -256,6 +257,142 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('click', function(e) {
         if (e.target === modal) {
             modal.style.display = 'none';
+        }
+    });
+});
+
+// Gallery Modal
+document.addEventListener('DOMContentLoaded', function() {
+    const galleryModal = document.getElementById('galleryModal');
+    if (!galleryModal) return;
+
+    const galleryModalImage = document.getElementById('galleryModalImage');
+    const prevArrow = document.querySelector('.gallery-prev-arrow');
+    const nextArrow = document.querySelector('.gallery-next-arrow');
+    const closeButton = document.querySelector('.gallery-close-button');
+    const galleryGrid = document.querySelector('.gallery-grid');
+
+    let galleryImages = [];
+    let currentIndex = 0;
+
+    // --- New Client-Side Randomization Logic ---
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+        }
+    }
+
+    function displayRandomImages() {
+        if (window.allGalleryImages && window.allGalleryImages.length > 0) {
+            // Use a copy to avoid re-shuffling the original array used by the lightbox
+            let imagesToShuffle = [...window.allGalleryImages];
+            shuffleArray(imagesToShuffle);
+            const imagesToDisplay = imagesToShuffle.slice(0, 3);
+            
+            galleryGrid.innerHTML = ''; // Clear placeholder
+
+            imagesToDisplay.forEach(src => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                galleryItem.innerHTML = `<img src="${src}" alt="Gallery image">`;
+                galleryGrid.appendChild(galleryItem);
+            });
+        }
+    }
+
+    function updateGalleryImages() {
+        if (window.allGalleryImages && window.allGalleryImages.length > 0) {
+            galleryImages = window.allGalleryImages;
+        } else {
+            galleryImages = Array.from(galleryGrid.querySelectorAll('.gallery-item img')).map(img => new URL(img.src).pathname);
+        }
+    }
+
+    function showImage(index) {
+        if (index >= 0 && index < galleryImages.length) {
+            galleryModalImage.src = galleryImages[index];
+            currentIndex = index;
+        }
+    }
+
+    function showNextImage() {
+        const nextIndex = (currentIndex + 1) % galleryImages.length;
+        showImage(nextIndex);
+    }
+
+    function showPrevImage() {
+        const prevIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        showImage(prevIndex);
+    }
+
+    function closeGalleryModal() {
+        galleryModal.style.display = 'none';
+        document.body.classList.remove('no-scroll');
+    }
+
+    if (galleryGrid) {
+        displayRandomImages(); // Display random images on page load
+        updateGalleryImages();
+
+        galleryGrid.addEventListener('click', function(e) {
+            const galleryItem = e.target.closest('.gallery-item');
+            if (galleryItem) {
+                const img = galleryItem.querySelector('img');
+                if (img) {
+                    const clickedPath = new URL(img.src).pathname;
+                    const clickedIndex = galleryImages.indexOf(clickedPath);
+                    galleryModal.style.display = 'flex';
+                    document.body.classList.add('no-scroll');
+                    showImage(clickedIndex);
+                }
+            }
+        });
+    }
+
+    nextArrow.addEventListener('click', showNextImage);
+    prevArrow.addEventListener('click', showPrevImage);
+
+    closeButton.addEventListener('click', closeGalleryModal);
+
+    window.addEventListener('click', function(e) {
+        if (e.target === galleryModal) {
+            closeGalleryModal();
+        }
+    });
+
+    // Swipe functionality
+    let touchstartX = 0;
+    let touchendX = 0;
+
+    galleryModal.addEventListener('touchstart', function(event) {
+        touchstartX = event.changedTouches[0].screenX;
+    }, false);
+
+    galleryModal.addEventListener('touchend', function(event) {
+        touchendX = event.changedTouches[0].screenX;
+        handleSwipe();
+    }, false); 
+
+    function handleSwipe() {
+        if (touchendX < touchstartX - 50) { // Swiped left
+            showNextImage();
+        }
+        if (touchendX > touchstartX + 50) { // Swiped right
+            showPrevImage();
+        }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (galleryModal.style.display === 'flex') {
+            if (e.key === 'ArrowRight') {
+                showNextImage();
+            } else if (e.key === 'ArrowLeft') {
+                showPrevImage();
+            } else if (e.key === 'Escape') {
+                closeGalleryModal();
+            }
         }
     });
 });

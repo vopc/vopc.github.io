@@ -179,42 +179,23 @@ hero:
     <div class="container">
         <div class="section-header">
             <h2>演出相簿</h2>
-            <p>音樂會和演出的精彩時刻</p>
+            <p>音樂會和活動的精彩時刻</p>
         </div>
         <div class="gallery-grid">
-            <div class="gallery-item">
-                <div class="gallery-placeholder">
-                    <span>音樂會演出</span>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-placeholder">
-                    <span>練唱時光</span>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-placeholder">
-                    <span>頒獎典禮</span>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-placeholder">
-                    <span>慈善活動</span>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-placeholder">
-                    <span>社區演出</span>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-placeholder">
-                    <span>競賽舞台</span>
-                </div>
-            </div>
+            <!-- Gallery items will be inserted here by JavaScript -->
         </div>
     </div>
 </section>
+
+<script>
+    // Pass all gallery image paths to the JavaScript
+    {% assign gallery_files = site.static_files | where_exp: "file", "file.path contains '/assets/images/gallery/'" %}
+    window.allGalleryImages = [
+        {% for file in gallery_files %}
+            "{{ file.path | relative_url }}"{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    ];
+</script>
 
 <!-- Contact Section -->
 <section id="contact" class="contact">
