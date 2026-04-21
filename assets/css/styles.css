@@ -153,8 +153,10 @@ main {
 }
 
 .hero-buttons {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+    width: fit-content;
 }
 
 .hero-logo {
@@ -175,6 +177,7 @@ main {
     transition: all 0.3s ease;
     border: 2px solid transparent;
     display: inline-block;
+    text-align: center;
     cursor: pointer;
 }
 
@@ -756,8 +759,7 @@ section {
     }
     
     .hero-buttons {
-        flex-direction: column;
-        align-items: flex-start;
+        grid-template-columns: 1fr;
     }
     
     .about-content,
