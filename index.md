@@ -14,6 +14,7 @@ hero:
             <div class="hero-buttons">
                 <a href="#about" class="btn btn-primary">關於愛樂</a>
                 <a href="#contact" class="btn btn-secondary">加入我們</a>
+                <a href="{{ '/member-section/' | relative_url }}" class="btn btn-secondary">歌譜下載</a>
             </div>
         </div>
     </div>

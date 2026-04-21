@@ -14,13 +14,20 @@ This is the official website for the 溫哥華愛樂合唱團 (Vancouver Oratori
   - **Upcoming Events**: A list of future concerts and events with modal pop-ups for posters.
   - **Photo Gallery**: A dynamically generated gallery of past performances and moments.
   - **Contact/Join Us**: Information on how to get in touch or join the choir.
+- **Member Portal**: A secure, password-protected area for choir members, featuring:
+  - **Sheet Music Download**: A secure document repository with preview and download capabilities.
+  - **Request Leave**: Integrated [Tally.so](https://tally.so/) form for managing attendance and leave requests.
 - **Interactive Components**:
   - Image slider using [Glide.js](https://glidejs.com/).
   - Modals for event posters and an expanded gallery view.
+  - **Supabase Integration**: Handles member authentication and secure storage for private assets.
+  - **Tally.so Integration**: Embeddable forms for member data collection.
 
 ## 🛠️ Built With
 
 - [Jekyll](https://jekyllrb.com/) - Static site generator
+- [Supabase](https://supabase.com/) - Backend-as-a-Service for Authentication and Storage
+- [Tally.so](https://tally.so/) - Form integration for leave requests
 - HTML5 & CSS3
 - JavaScript (ES6+)
 - [Glide.js](https://glidejs.com/) - for the image carousel
@@ -70,6 +77,8 @@ The `--livereload` flag will automatically refresh the page when you make change
 │   └── vendor/
 ├── _config.yml       # Jekyll configuration
 ├── index.md          # Main page content
+├── member-section.md # Member portal landing and login
+├── sheet-music.md    # Sheet music listing and secure downloads
 └── README.md         # This file
 ```
 

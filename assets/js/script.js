@@ -12,11 +12,28 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Smooth Scrolling for Navigation Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+        if (!href) return;
+
+        // Handle Home link scroll-to-top when already on the home page
+        // We strictly check for root or index.html to avoid matching other directory links like /sheet-music/
+        const isHomeLink = href === '/' || href.endsWith('/index.html') || href === 'index.html';
+        const isAtHome = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
+        
+        if (isHomeLink && isAtHome) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+
+        if (!href.includes('#') || href === '#') return;
+        
+        const targetId = href.substring(href.indexOf('#'));
+        const target = document.querySelector(targetId);
         if (target) {
+            e.preventDefault();
             const headerHeight = document.querySelector('.header').offsetHeight;
             const targetPosition = target.offsetTop - headerHeight;
             
@@ -29,27 +46,43 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Active Navigation Link Highlighting
-window.addEventListener('scroll', function() {
+function updateActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
-    const headerHeight = document.querySelector('.header').offsetHeight;
+    const header = document.querySelector('.header');
+    if (!header) return;
+    
+    const headerHeight = header.offsetHeight;
     
     let current = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop - headerHeight - 100;
         const sectionHeight = section.offsetHeight;
-        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+        if (window.scrollY >= sectionTop) {
             current = section.getAttribute('id');
         }
     });
     
     navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        
+        const isHomeActive = current === 'home' && (href === '/' || href.endsWith('/index.html') || href.endsWith('#home'));
+        
+        // Check if current path is any of the member-related pages
+        const memberPaths = ['/member-section/', '/sheet-music/'];
+        const isMemberSectionPage = memberPaths.some(path => window.location.pathname.includes(path));
+        const isMemberSectionLink = href.includes('/member-section/');
+
+        if ((current && href.endsWith(`#${current}`)) || isHomeActive || (isMemberSectionPage && isMemberSectionLink)) {
             link.classList.add('active');
         }
     });
-});
+}
+
+window.addEventListener('scroll', updateActiveNavLink);
+document.addEventListener('DOMContentLoaded', updateActiveNavLink);
 
 // Form Submission Handler
 document.addEventListener('DOMContentLoaded', function() {
@@ -206,6 +239,28 @@ backToTopButton.addEventListener('click', function() {
 // Loading Animation
 window.addEventListener('load', function() {
     document.body.classList.add('loaded');
+
+    // Handle initial hash scroll after page is fully loaded and visible
+    if (window.location.hash) {
+        try {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = target.offsetTop - headerHeight;
+                
+                // Manual scroll to account for fixed header offset
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Clean up URL after starting scroll to keep address bar tidy
+                history.replaceState(null, null, window.location.pathname + window.location.search);
+            }
+        } catch (e) {
+            // Ignore invalid selectors
+        }
+    }
 });
 
 // Add loading styles
