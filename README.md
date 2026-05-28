@@ -94,6 +94,6 @@ This project is licensed under the MIT License - see the `LICENSE` file for deta
 
 ## 📧 Contact
 
-Vancouver Oratorio Philharmonic Choir
+Vancouver Oriental Philharmonic Choir
 - **Email**: vopcca@gmail.com
 - **Website**: vopc.ca
