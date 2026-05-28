@@ -1,6 +1,6 @@
 # VOPC - 溫哥華愛樂合唱團 Website
 
-This is the official website for the 溫哥華愛樂合唱團 (Vancouver Oratorio Philharmonic Choir - VOPC). The site is built using Jekyll and is designed to be a central hub for information about the choir, including events, activities, and how to join.
+This is the official website for the 溫哥華愛樂合唱團 (Vancouver Oriental Philharmonic Choir - VOPC). The site is built using Jekyll and is designed to be a central hub for information about the choir, including events, activities, and how to join.
 
 **Live Site:** [https://vopc.ca](https://vopc.ca)
 
