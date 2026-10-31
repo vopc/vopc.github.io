@@ -13,7 +13,7 @@ hero:
             <p class="hero-subtitle">歡迎訪問溫哥華愛樂合唱團</p>
             <div class="hero-buttons">
                 <a href="#about" class="btn btn-primary">關於愛樂</a>
-                <a href="#contact" class="btn btn-secondary">加入我們</a>
+                <button class="btn btn-secondary" type="button" onclick="Tally.openPopup('2jE2QL', { layout: 'modal', width: 700, emoji: { text: '📄', animation: 'none' }, autoClose: 3000 });">加入我們</button>
             </div>
         </div>
     </div>
@@ -201,8 +201,14 @@ hero:
 <section id="contact" class="contact">
     <div class="container">
         <div class="section-header">
-            <h2>加入我們</h2>
-            <p>微信掃一掃進行試音或了解更多資訊</p>
+            <h2>
+                <button
+                    class="contact-title-button"
+                    type="button"
+                    onclick="Tally.openPopup('2jE2QL', { layout: 'modal', width: 700, emoji: { text: '📄', animation: 'none' }, autoClose: 3000 });"
+                >點擊加入我們</button>
+            </h2>
+            <p>微信掃一掃了解更多資訊</p>
         </div>
         <div class="contact-content">
             <div class="contact-image">
