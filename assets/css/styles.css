@@ -371,6 +371,37 @@ section {
     align-items: center;
 }
 
+.event-card[hidden] {
+    display: none;
+}
+
+.events-toggle-container {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.events-toggle {
+    padding: 10px 20px;
+    border: 2px solid #a82212;
+    border-radius: 8px;
+    background: transparent;
+    color: #a82212;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.events-toggle:hover {
+    background: #a82212;
+    color: #fff;
+}
+
+.events-toggle:focus-visible {
+    outline: 3px solid #1f2937;
+    outline-offset: 3px;
+}
+
 .event-date {
     background: #a82212;
     color: #fff;
