@@ -11,6 +11,53 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Show recent events by default, with an option to reveal older events.
+document.addEventListener('DOMContentLoaded', function() {
+    const eventsGrid = document.getElementById('eventsGrid');
+    const eventsToggle = document.querySelector('.events-toggle');
+
+    if (!eventsGrid || !eventsToggle) {
+        return;
+    }
+
+    const cutoffDate = new Date();
+    cutoffDate.setHours(0, 0, 0, 0);
+    cutoffDate.setDate(cutoffDate.getDate() - 60);
+
+    const olderEvents = Array.from(eventsGrid.querySelectorAll('[data-event-date]'))
+        .filter(event => {
+            const eventDate = new Date(`${event.dataset.eventDate}T00:00:00`);
+            const isOlderEvent = !Number.isNaN(eventDate.getTime()) && eventDate < cutoffDate;
+            event.hidden = isOlderEvent;
+            return isOlderEvent;
+        });
+
+    if (olderEvents.length === 0) {
+        return;
+    }
+
+    eventsToggle.hidden = false;
+    eventsToggle.addEventListener('click', function() {
+        const showOlderEvents = eventsToggle.getAttribute('aria-expanded') !== 'true';
+        olderEvents.forEach(event => {
+            event.hidden = !showOlderEvents;
+        });
+        eventsToggle.setAttribute('aria-expanded', String(showOlderEvents));
+        eventsToggle.textContent = showOlderEvents ? '收起較早活動' : '查看更多過往活動';
+
+        if (!showOlderEvents) {
+            const mostRecentVisibleEvent = Array.from(eventsGrid.querySelectorAll('[data-event-date]'))
+                .filter(event => !event.hidden)
+                .sort((first, second) => second.dataset.eventDate.localeCompare(first.dataset.eventDate))[0];
+
+            if (mostRecentVisibleEvent) {
+                mostRecentVisibleEvent.tabIndex = -1;
+                mostRecentVisibleEvent.focus();
+            }
+        }
+    });
+});
+
 // Smooth Scrolling for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

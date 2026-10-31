@@ -133,8 +133,32 @@ hero:
             <h2>即將舉行的演出</h2>
             <p>歡迎參加我們的音樂會和音樂活動</p>
         </div>
-        <div class="events-grid">
-            <div class="event-card">
+        <div class="events-grid" id="eventsGrid">
+            <div class="event-card" data-event-date="2026-11-14">
+                <div class="event-date">
+                    <span class="month">十一月</span>
+                    <span class="day">14</span>
+                </div>
+                <div class="event-content">
+                    <h3>2026秋聆愛樂夜</h3>
+                    <p class="event-time">2026年11月14日 • 晚上7:30</p>
+                    <p class="event-description">溫哥華愛樂合唱團秋季音樂會，攜手室內合唱團、少年合唱團及學生管弦樂團演出。</p>
+                    <a href="javascript:void(0);" class="event-link" data-poster="{{ '/assets/images/posters/20261114-poster.jpg' | relative_url }}">了解更多</a>
+                </div>
+            </div>
+            <div class="event-card" data-event-date="2026-10-18">
+                <div class="event-date">
+                    <span class="month">十月</span>
+                    <span class="day">18</span>
+                </div>
+                <div class="event-content">
+                    <h3>晨曦之悅：Richard Li 慈善音樂會</h3>
+                    <p class="event-time">2026年10月18日 • 晚上7:00–9:00</p>
+                    <p class="event-description">Richard Li 古典聲樂獨唱慈善音樂會，溫哥華愛樂合唱團等團體友情演出，支持 BC Children's Hospital Foundation。</p>
+                    <a href="javascript:void(0);" class="event-link" data-poster="{{ '/assets/images/posters/20261018-poster.jpg' | relative_url }}">了解更多</a>
+                </div>
+            </div>
+            <div class="event-card" data-event-date="2025-11-01">
                 <div class="event-date">
                     <span class="month">十一月</span>
                     <span class="day">1</span>
@@ -146,7 +170,7 @@ hero:
                     <a href="javascript:void(0);" class="event-link" data-poster="{{ '/assets/images/posters/20251101-poster.jpg' | relative_url }}">了解更多</a>
                 </div>
             </div>
-            <div class="event-card">
+            <div class="event-card" data-event-date="2025-09-19">
                 <div class="event-date">
                     <span class="month">9月</span>
                     <span class="day">19</span>
@@ -170,6 +194,9 @@ hero:
                     <a href="#contact" class="contact-link">聯絡我們</a>
                 </div>
             </div>
+        </div>
+        <div class="events-toggle-container">
+            <button class="events-toggle" type="button" aria-controls="eventsGrid" aria-expanded="false" hidden>查看更多過往活動</button>
         </div>
     </div>
 </section>
