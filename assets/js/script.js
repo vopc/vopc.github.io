@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Show recent events by default, with an option to reveal older events.
+// Show events from this year and the previous year by default.
 document.addEventListener('DOMContentLoaded', function() {
     const eventsGrid = document.getElementById('eventsGrid');
     const eventsToggle = document.querySelector('.events-toggle');
@@ -20,14 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    const cutoffDate = new Date();
-    cutoffDate.setHours(0, 0, 0, 0);
-    cutoffDate.setDate(cutoffDate.getDate() - 60);
+    const earliestVisibleYear = new Date().getFullYear() - 1;
 
     const olderEvents = Array.from(eventsGrid.querySelectorAll('[data-event-date]'))
         .filter(event => {
             const eventDate = new Date(`${event.dataset.eventDate}T00:00:00`);
-            const isOlderEvent = !Number.isNaN(eventDate.getTime()) && eventDate < cutoffDate;
+            const isOlderEvent = !Number.isNaN(eventDate.getTime())
+                && eventDate.getFullYear() < earliestVisibleYear;
             event.hidden = isOlderEvent;
             return isOlderEvent;
         });
